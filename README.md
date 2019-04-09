@@ -36,9 +36,10 @@ The remaining high quality reads must be aligned to a reference in order to gene
 ### Biological Analysis
 The Biological Analysis of single-cell RNA-seq data starts with an expression matrix where the columns represent barcodes (cells) and the rows represent features (genes). The challenges in the general workflow have been described well by [Kiselev, Andrews and Hemberg](https://www.nature.com/articles/s41576-018-0088-9). 
 
-#### Chromium droplet-sequencing data analysis
 The script for the analysis of Drop-Seq data is currently based on the [Seurat](https://satijalab.org/seurat/) workflow and executed in [R](https://www.r-project.org/). 
+
 The steps for the analysis include:
+
 1. Adding Metadata
 2. Filtering
 3. Normalization
@@ -47,5 +48,3 @@ The steps for the analysis include:
 6. Clustering
 7. Gene Enrichment Analysis
 
-#### Smart-Seq2 data analysis
-No Smart-Seq2 data has been processed yet.
