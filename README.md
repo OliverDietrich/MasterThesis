@@ -15,7 +15,8 @@ This public repository contains the source code that has been used to analyze th
 The data analysis frameworks, workflows and tools that were used to develop this script are [Seurat](https://satijalab.org/seurat/), [Scanpy](https://scanpy.readthedocs.io/en/stable/), [Scran](https://bioconductor.org/packages/release/bioc/vignettes/scran/inst/doc/scran.html) and the [single-cell RNA-seq course](https://hemberg-lab.github.io/scRNA.seq.course/index.html) from the University of Cambridge. 
 
 ### Preprocessing Raw-Sequencing Data & Constructing the Expression Matrix
-The primary output for data analysis are per-cycle BCL basecall files from Illumina Sequencers. First, these files need to be de-multiplexed and converted to FASTQ-format by the program [bcl2fastq](https://support.illumina.com/content/dam/illumina-support/documents/documentation/software_documentation/bcl2fastq/bcl2fastq_letterbooklet_15038058brpmi.pdf). 
+1. The primary output for data analysis are per-cycle BCL basecall files from Illumina Sequencers. First, these files need to be de-multiplexed and converted to FASTQ-format by the program [bcl2fastq](https://support.illumina.com/content/dam/illumina-support/documents/documentation/software_documentation/bcl2fastq/bcl2fastq_letterbooklet_15038058brpmi.pdf). 
+2. The quality of reads has to be assessed by programs like [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). 
 
 ### Biological Analysis
 The Biological Analysis of single-cell RNA-seq data starts with an expression matrix where the columns represent barcodes (cells) and the rows represent features (genes). The challenges in the general workflow have been described well by [Kiselev, Andrews and Hemberg](https://www.nature.com/articles/s41576-018-0088-9). 
