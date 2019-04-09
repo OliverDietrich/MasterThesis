@@ -23,6 +23,14 @@ The Biological Analysis of single-cell RNA-seq data starts with an expression ma
 
 #### Chromium droplet-sequencing data analysis
 The script for the analysis of Drop-Seq data is currently based on the [Seurat](https://satijalab.org/seurat/) workflow and executed in [R](https://www.r-project.org/). 
+The steps for the analysis include:
+1. Adding metadata
+2. Filtering
+3. Normalization
+4. Feature Selection
+5. Dimensional Reduction
+6. Clustering
+7. Gene Enrichment Analysis
 
 #### Smart-Seq2 data analysis
 No Smart-Seq2 data has been processed yet.
