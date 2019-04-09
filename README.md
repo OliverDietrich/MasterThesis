@@ -11,3 +11,5 @@ This public repository contains the source code that has been used to analyze th
 4. Dissecting the Microenvironment of the Squamo-Columnar Junction of the Cervix
 5. Exploring the Cellular Repertoire of Myeloid-Derived Suppressor Cells
 
+## Workflow
+The data analysis frameworks, workflows and tools that were used to develop this script are [Seurat](https://satijalab.org/seurat/), [Scanpy](https://scanpy.readthedocs.io/en/stable/), [Scran](https://bioconductor.org/packages/release/bioc/vignettes/scran/inst/doc/scran.html) and the [single-cell RNA-seq course](https://hemberg-lab.github.io/scRNA.seq.course/index.html) from the University of Cambridge. 
