@@ -14,5 +14,13 @@ This public repository contains the source code that has been used to analyze th
 ## Workflows
 The data analysis frameworks, workflows and tools that were used to develop this script are [Seurat](https://satijalab.org/seurat/), [Scanpy](https://scanpy.readthedocs.io/en/stable/), [Scran](https://bioconductor.org/packages/release/bioc/vignettes/scran/inst/doc/scran.html) and the [single-cell RNA-seq course](https://hemberg-lab.github.io/scRNA.seq.course/index.html) from the University of Cambridge. 
 
-### Chromium droplet-sequencing data analysis
+### Preprocessing Raw-Sequencing Data & Constructing the Expression Matrix
+
+### Biological Analysis
+The Biological Analysis of single-cell RNA-seq data starts with an expression matrix where the columns represent barcodes (cells) and the rows represent features (genes). The challenges in the general workflow have been described well by [Kiselev, Andrews and Hemberg](https://www.nature.com/articles/s41576-018-0088-9). 
+
+#### Chromium droplet-sequencing data analysis
 The script for the analysis of Drop-Seq data is currently based on the [Seurat](https://satijalab.org/seurat/) workflow and executed in [R](https://www.r-project.org/). 
+
+#### Smart-Seq2 data analysis
+No Smart-Seq2 data has been processed yet.
