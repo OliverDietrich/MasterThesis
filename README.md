@@ -16,14 +16,22 @@ The data analysis frameworks, workflows and tools that were used to develop this
 
 ### Preprocessing Raw-Sequencing Data & Constructing the Expression Matrix
 The processing of next-generation sequencing data is similar between single-cell and traditional RNA-seq and consists of the following steps:
+
 1. Demultiplexing and conversion to FASTQ-format
+
 The primary output for data analysis are per-cycle BCL basecall files from Illumina Sequencers. First, these files need to be de-multiplexed and converted to FASTQ-format by the program [bcl2fastq](https://support.illumina.com/content/dam/illumina-support/documents/documentation/software_documentation/bcl2fastq/bcl2fastq_letterbooklet_15038058brpmi.pdf). 
+
 2. Quality control & preprocessing
+
 The quality of reads has to be assessed by programs like [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). Low quality reads can be either removed or trimmed by programs like [Trim Galore](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/), [Cutadapt](https://cutadapt.readthedocs.io/en/stable/guide.html) or [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic). 
-4. Aligning reads to a reference
+
+3. Aligning reads to a reference
+
 The remaining high quality reads must be aligned to a reference in order to generate gene counts. Different aligners ([Bowtie](http://bowtie-bio.sourceforge.net/index.shtml), [TopHat](https://ccb.jhu.edu/software/tophat/index.shtml), [STAR](https://github.com/alexdobin/STAR), [Kallisto](https://pachterlab.github.io/kallisto/about)) are available BUT MORE INFORMATION WILL BE ADDED.
-5. Annotation based quality control
-6. Quantitation of gene expression
+
+4. Annotation based quality control
+
+5. Quantitation of gene expression
 
 ### Biological Analysis
 The Biological Analysis of single-cell RNA-seq data starts with an expression matrix where the columns represent barcodes (cells) and the rows represent features (genes). The challenges in the general workflow have been described well by [Kiselev, Andrews and Hemberg](https://www.nature.com/articles/s41576-018-0088-9). 
