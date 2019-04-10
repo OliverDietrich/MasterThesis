@@ -46,5 +46,5 @@ The steps for the analysis include:
 4. Feature Selection
 5. Dimensional Reduction
 6. Clustering
-7. Gene Enrichment Analysis
+7. Gene Set Enrichment Analysis
 
