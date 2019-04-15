@@ -15,13 +15,15 @@ This public repository contains the source code that has been used to analyze da
 The data analysis workflow developed here is based on [Seurat](https://satijalab.org/seurat/), [Scanpy](https://scanpy.readthedocs.io/en/stable/), [Scran](https://bioconductor.org/packages/release/bioc/vignettes/scran/inst/doc/scran.html), the [single-cell RNA-seq course](https://hemberg-lab.github.io/scRNA.seq.course/index.html) from the University of Cambridge and [RNA-seq Data Analysis - A Practical Approach](https://doi.org/10.1201/b17457). 
 
 ### Preprocessing Raw-Sequencing Data & Constructing the Expression Matrix
-The processing of next-generation sequencing data is similar between single-cell and traditional RNA-seq and consists of the following steps:
+The processing of next-generation sequencing data is similar between single-cell and traditional RNA-seq. The general workflow for the analysis of Illumina sequencing data can be broken down into the following steps:
 
 1. Demultiplexing and conversion to FASTQ-format
 
-The primary output for data analysis are per-cycle BCL basecall files from Illumina Sequencers. First, these files need to be de-multiplexed and converted to FASTQ-format by the program [bcl2fastq](https://support.illumina.com/content/dam/illumina-support/documents/documentation/software_documentation/bcl2fastq/bcl2fastq_letterbooklet_15038058brpmi.pdf). 
+The primary output for data analysis are per-cycle BCL basecall files from Illumina Sequencers. First, these files need to be de-multiplexed and converted to FASTQ-format by the Illumina software [bcl2fastq](https://support.illumina.com/content/dam/illumina-support/documents/documentation/software_documentation/bcl2fastq/bcl2fastq_letterbooklet_15038058brpmi.pdf). 
 
 2. Quality control & preprocessing
+
+The quality of reads depends on the library preparation that can induce technical artifacts including low-confidence bases, sequence-specific bias, 3′/5′ positional bias, polymerase chain reaction (PCR) artifacts, untrimmed adapters, and sequence contamination [1](https://doi.org/10.1201/b17457) which are inherent to RNA-seq as well as gene dropouts (Kharchenko, Silberstein, and Scadden [2014](https://doi.org/10.1038/nmeth.2967)) which are specific for the single-cell approach. 
 
 The quality of reads has to be assessed by programs like [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). Low quality reads can be either removed or trimmed by programs like [Trim Galore](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/), [Cutadapt](https://cutadapt.readthedocs.io/en/stable/guide.html) or [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic). 
 
