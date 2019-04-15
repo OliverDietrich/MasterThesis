@@ -40,11 +40,12 @@ The script for the analysis of Drop-Seq data is currently based on the [Seurat](
 
 The steps for the analysis include:
 
-1. Adding Metadata
-2. Filtering
-3. Normalization
-4. Feature Selection
-5. Dimensional Reduction
-6. Clustering
-7. Gene Set Enrichment Analysis
-
+1. Quality Control (QC)
+- Adding Metadata
+- Filtering
+2. Feature Selection
+- includes Normalization
+3. Dimensional Reduction
+4. Clustering
+5. Gene Set Enrichment Analysis
+- based on annotated clusters
