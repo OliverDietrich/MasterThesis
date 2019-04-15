@@ -27,9 +27,11 @@ The quality of reads depends on the library preparation that can induce technica
 
 Tools for checking read quality include [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and [PRINSEQ](https://dx.doi.org/10.1093%2Fbioinformatics%2Fbtr026) which provide a visual report of several quality metrics. Further processing of reads includes filtering and trimming which can be performed by a range of other tools including PRINSEQ, [Trimmomatic](https://doi.org/10.1093/bioinformatics/btu170), [Cutadapt](https://doi.org/10.14806/ej.17.1.200), and [FastX](http://hannonlab.cshl.edu/fastx_toolkit/index.html).
 
+Specific for single-cell RNA-seq is the removal of 
+
 3. Aligning reads to a reference
 
-The remaining high quality reads must be aligned to a reference in order to generate gene counts. Different aligners ([Bowtie](http://bowtie-bio.sourceforge.net/index.shtml), [TopHat](https://ccb.jhu.edu/software/tophat/index.shtml), [STAR](https://github.com/alexdobin/STAR), [Kallisto](https://pachterlab.github.io/kallisto/about)) are available BUT MORE INFORMATION WILL BE ADDED.
+The remaining high quality reads must be aligned to a reference in order to generate gene counts. There is a large variety of alignment programs available which offer distinct qualities. Some aligners ([bowtie2](https://doi.org/10.1038/nmeth.1923), [BWA](https://doi.org/10.1093/bioinformatics/btp324)) only align contiguously and are not able to handle genomes containing introns. Examples for spliced aligners are [TopHat2](https://doi.org/10.1186/gb-2013-14-4-r36), [STAR](https://doi.org/10.1093/bioinformatics/bts635), or [GSNAP](https://doi.org/10.1007/978-1-4939-3578-9_15) and the list can be extended by pseudo-aligners like [Kallisto](https://doi.org/10.1038/nbt.3519).
 
 4. Annotation based quality control
 
