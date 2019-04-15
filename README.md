@@ -48,7 +48,7 @@ The steps for the analysis include:
 - Variance based selection of genes
 - Principle component analysis (PCA)
 3. Dimensional Reduction
- - t-distributed Stochastic Neighbor Embedding (tSNE)
+   - t-distributed Stochastic Neighbor Embedding (tSNE)
 - Uniform Manifold Approximation and Projection (UMAP)
 - Diffusion Map
 4. Clustering
