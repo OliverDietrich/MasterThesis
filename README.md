@@ -48,9 +48,9 @@ The steps for the analysis include:
 - Variance based selection of genes
 - Principle component analysis (PCA)
 3. Dimensional Reduction
-  - t-distributed Stochastic Neighbor Embedding (tSNE)
-- Uniform Manifold Approximation and Projection (UMAP)
-- Diffusion Map
+    - t-distributed Stochastic Neighbor Embedding (tSNE)
+    - Uniform Manifold Approximation and Projection (UMAP)
+    - Diffusion Map
 4. Clustering
 - [Louvain](https://perso.uclouvain.be/vincent.blondel/research/louvain.html) method for community detection in large networks
 - Smart local moving algorithm for large-scale modularity-based community detection ([SLM](http://www.ludowaltman.nl/slm/))
