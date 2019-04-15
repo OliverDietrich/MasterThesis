@@ -43,6 +43,8 @@ To quantify the gene expression level of each gene for each cell the mapped read
 
 - The library preparation differs greatly between conventional and single-cell RNA-seq and the choice of technology depends on the biological question at hand. The different single-cell technologies have been reviewed by Ziegenhain, et al. [2017](https://doi.org/10.1016/j.molcel.2017.01.023) and Svensson et al. [2017](https://doi.org/10.1038/nmeth.4220). 
 
+- The computational analysis of 10x Chromium Drop-Seq data has been streamlined by the [Cell Ranger](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger) software.
+
 ### Biological Analysis
 The Biological Analysis of single-cell RNA-seq data starts with an expression matrix where the columns represent barcodes (cells) and the rows represent features (genes). The challenges in the general workflow have been described well by [Kiselev, Andrews and Hemberg](https://www.nature.com/articles/s41576-018-0088-9). 
 
