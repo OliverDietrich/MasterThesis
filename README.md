@@ -42,6 +42,7 @@ The output generated from the alignment are SAM files. These have to be converte
 To quantify the gene expression level of each gene for each cell the mapped reads can be counted per genomic feature based on the location information. Several counting tools are available, however, many single-cell protocols employ unique molecular identifiers (UMI) to count the absolute number of molecules (and get rid of amplification bias) which has to be supported by the program. A popular tool used for both conventional and single-cell RNA-seq is [HTseq](https://doi.org/10.1093/bioinformatics/btu638).
 
 
+
 The library preparation differs greatly between conventional and single-cell RNA-seq and the choice of technology depends on the biological question at hand. The different single-cell technologies have been reviewed by Ziegenhain, et al. [2017](https://doi.org/10.1016/j.molcel.2017.01.023) and Svensson et al. [2017](https://doi.org/10.1038/nmeth.4220). 
 
 ### Biological Analysis
