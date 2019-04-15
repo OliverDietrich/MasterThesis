@@ -35,6 +35,9 @@ The remaining high quality reads must be aligned to a reference in order to gene
 
 5. Quantitation of gene expression
 
+
+The library preparation differs greatly between conventional and single-cell RNA-seq and the choice of technology depends on the biological question at hand. The different single-cell technologies have been reviewed by Ziegenhain, et al. [2017](https://doi.org/10.1016/j.molcel.2017.01.023) and Svensson et al. [2017](https://doi.org/10.1038/nmeth.4220). 
+
 ### Biological Analysis
 The Biological Analysis of single-cell RNA-seq data starts with an expression matrix where the columns represent barcodes (cells) and the rows represent features (genes). The challenges in the general workflow have been described well by [Kiselev, Andrews and Hemberg](https://www.nature.com/articles/s41576-018-0088-9). 
 
