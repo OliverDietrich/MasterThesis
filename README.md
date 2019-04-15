@@ -49,6 +49,7 @@ The steps for the analysis include:
     - Principle component analysis ([PCA](https://doi.org/10.1038/nmeth.4346))
 3. Dimensional Reduction
     - t-distributed Stochastic Neighbor Embedding ([tSNE](https://lvdmaaten.github.io/tsne/))
+    - Fast interpolation-based t-SNE ([FI-tSNE](https://doi.org/10.1038/s41592-018-0308-4))
     - Uniform Manifold Approximation and Projection ([UMAP](https://umap-learn.readthedocs.io/en/latest/))
     - Diffusion Map
 4. Clustering
