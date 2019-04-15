@@ -61,7 +61,8 @@ The steps for the analysis include:
     - t-distributed Stochastic Neighbor Embedding ([tSNE](https://lvdmaaten.github.io/tsne/))
     - Fast interpolation-based t-SNE ([FI-tSNE](https://doi.org/10.1038/s41592-018-0308-4))
     - Uniform Manifold Approximation and Projection ([UMAP](https://umap-learn.readthedocs.io/en/latest/))
-    - Diffusion Map
+    - Diffusion Maps ([DM](https://doi.org/10.1093/bioinformatics/btv325))
+    - [SPRING](https://doi.org/10.1093/bioinformatics/btx792)
 4. Clustering
     - [Louvain](https://perso.uclouvain.be/vincent.blondel/research/louvain.html) method for community detection in large networks
     - Smart local moving algorithm for large-scale modularity-based community detection ([SLM](http://www.ludowaltman.nl/slm/))
