@@ -12,7 +12,7 @@ This public repository contains the source code that has been used to analyze th
 5. Exploring the Cellular Repertoire of Myeloid-Derived Suppressor Cells
 
 ## Workflows
-The data analysis frameworks, workflows and tools that were used to develop this script are [Seurat](https://satijalab.org/seurat/), [Scanpy](https://scanpy.readthedocs.io/en/stable/), [Scran](https://bioconductor.org/packages/release/bioc/vignettes/scran/inst/doc/scran.html), the [single-cell RNA-seq course](https://hemberg-lab.github.io/scRNA.seq.course/index.html) from the University of Cambridge and [RNA-seq Data Analysis - A Practical Approach](https://doi.org/10.1201/b17457). 
+The data analysis workflow developed here is based on [Seurat](https://satijalab.org/seurat/), [Scanpy](https://scanpy.readthedocs.io/en/stable/), [Scran](https://bioconductor.org/packages/release/bioc/vignettes/scran/inst/doc/scran.html), the [single-cell RNA-seq course](https://hemberg-lab.github.io/scRNA.seq.course/index.html) from the University of Cambridge and [RNA-seq Data Analysis - A Practical Approach](https://doi.org/10.1201/b17457). 
 
 ### Preprocessing Raw-Sequencing Data & Constructing the Expression Matrix
 The processing of next-generation sequencing data is similar between single-cell and traditional RNA-seq and consists of the following steps:
