@@ -16,7 +16,6 @@ The data analysis workflow developed here is based on [Seurat](https://satijalab
 
 The library preparation differs greatly between conventional and single-cell RNA-seq and the choice of technology depends on the biological question at hand. The different single-cell technologies have been reviewed by Ziegenhain, et al. [2017](https://doi.org/10.1016/j.molcel.2017.01.023) and Svensson et al. [2017](https://doi.org/10.1038/nmeth.4220). 
 
-The computational analysis of 10x Chromium Drop-Seq data has been streamlined by the [Cell Ranger](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger) software.
 ### Preprocessing Raw-Sequencing Data & Constructing the Expression Matrix
 The processing of next-generation sequencing data is similar between single-cell and traditional RNA-seq. The general workflow for the analysis of Illumina sequencing data can be broken down into the following steps:
 
@@ -47,6 +46,10 @@ To quantify the gene expression level of each gene for each cell the mapped read
 6. Correcting for Errors
 
 Collapsing reads based on a shared UMI-sequence is necessary for UMI-based scRNAseq protocols, however, it is still an active area of research how to process and use the UMIs correctly. Popular tools available at the moment are [UMI-tools](https://genome.cshlp.org/content/27/3/491), [zUMIs](https://doi.org/10.1093/gigascience/giy059) and [dropEst](https://doi.org/10.1186/s13059-018-1449-6).
+
+---
+
+The computational analysis of 10x Chromium Drop-Seq data has been streamlined by the [Cell Ranger](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger) software.
 
 ### Biological Analysis
 The Biological Analysis of single-cell RNA-seq data starts with an expression matrix where the columns represent barcodes (cells) and the rows represent features (genes). The challenges in the general workflow have been described well by [Kiselev, Andrews and Hemberg](https://www.nature.com/articles/s41576-018-0088-9). 
