@@ -30,7 +30,7 @@ The quality of reads depends on the library preparation that can induce technica
 
 Tools for checking read quality include [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and [PRINSEQ](https://dx.doi.org/10.1093%2Fbioinformatics%2Fbtr026) which provide a visual report of several quality metrics. Further processing of reads includes filtering and trimming which can be performed by a range of other tools including PRINSEQ, [Trimmomatic](https://doi.org/10.1093/bioinformatics/btu170), [Cutadapt](https://doi.org/10.14806/ej.17.1.200), and [FastX](http://hannonlab.cshl.edu/fastx_toolkit/index.html).
 
-Specific for single-cell RNA-seq is the removal of barcodes derived from empty droplets prior to alignment. Even though no cell was captured the presence of ambient RNA can lead to read counts for those barcodes and this background of small libraries has to be removed. This can be achieved by setting a certain threshold, usually associated with a significant drop in library siz, or by using newly developed tools for this purpose (e.g. [dropletUtils](https://bioconductor.org/packages/devel/bioc/html/DropletUtils.html)).
+Specific for single-cell RNA-seq is the removal of barcodes derived from empty droplets prior to alignment. Even though no cell was captured the presence of ambient RNA can lead to read counts for those barcodes and this background of small libraries has to be removed. This can be achieved by setting a certain threshold, usually associated with a significant drop in library size, or by using newly developed tools for this purpose (e.g. [dropletUtils](https://bioconductor.org/packages/devel/bioc/html/DropletUtils.html)).
 
 3. Aligning reads to a reference
 
