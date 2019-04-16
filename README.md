@@ -46,7 +46,7 @@ To quantify the gene expression level of each gene for each cell the mapped read
 
 6. Correcting for Errors
 
-Collapsing reads based on a shared UMI-sequence is necessary for UMI-based scRNAseq protocols, however, it is still an active area of research how to process and use the UMIs correctly. The tools available at the moment are [UMI-tools](https://genome.cshlp.org/content/27/3/491), [zUMIs](https://doi.org/10.1093/gigascience/giy059), [dropEst](https://doi.org/10.1186/s13059-018-1449-6).
+Collapsing reads based on a shared UMI-sequence is necessary for UMI-based scRNAseq protocols, however, it is still an active area of research how to process and use the UMIs correctly. Popular tools available at the moment are [UMI-tools](https://genome.cshlp.org/content/27/3/491), [zUMIs](https://doi.org/10.1093/gigascience/giy059) and [dropEst](https://doi.org/10.1186/s13059-018-1449-6).
 
 ### Biological Analysis
 The Biological Analysis of single-cell RNA-seq data starts with an expression matrix where the columns represent barcodes (cells) and the rows represent features (genes). The challenges in the general workflow have been described well by [Kiselev, Andrews and Hemberg](https://www.nature.com/articles/s41576-018-0088-9). 
