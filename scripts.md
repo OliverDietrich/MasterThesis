@@ -11,5 +11,7 @@ Alternatively, the patch (file containing only the changes) can be distributed a
 
 > diff -c dropseQC.R dropseQC-1.x.R > patch-1.x
 
+Now you only have to download the patch and run
+
 > patch -i patch-1.x
 
