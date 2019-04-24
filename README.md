@@ -81,4 +81,4 @@ based on annotated clusters
     
 ---
 
-The computational workflow for the biological analysis is described in [scripts.md](MasterThesis/scripts.md)
+The computational workflow for the biological analysis is described in [scripts.md](scripts.md)
