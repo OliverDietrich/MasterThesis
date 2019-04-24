@@ -1,8 +1,10 @@
-# Automating the computational workflow using scripts
+# Computational Workflow
 
-## Combination of R scripts in Biological Analysis
+## Bash scripts for the Raw Data Preprocessing
 
-## Using bash scripts to submit R script as background processes or to SGE
+## R scripts for the Biological Analysis
+
+### Using bash scripts to submit R script as background processes or to SGE
 
 ## Patching
 Patches are used to update the commonly used version of a script (e.g. dropseQC.R) with changes from the latest draft (e.g. dropseQC-1.7) without replacing the file.
