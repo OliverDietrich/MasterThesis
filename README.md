@@ -78,3 +78,7 @@ The steps for the analysis include:
 5. Gene Set Enrichment Analysis
 based on annotated clusters
     - Wilcoxon rank sum test  
+    
+---
+
+The computational workflow for the biological analysis is described in [scripts.md](MasterThesis/scripts.md)
