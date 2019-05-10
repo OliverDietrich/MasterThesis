@@ -20,3 +20,10 @@ Alternatively, the patch (file containing only the changes) can be distributed a
 Now you only have to download the patch and run
 
 > patch -i patch-1.x
+
+## Conda environment
+The bash scripts activate a conda environment that includes all necessary packages (dependencies) in the correct version for the execution of the script. 
+
+The conda environment file (.yml) is available in the file collection and can be installed by the simple command
+
+> conda env create -f environment.yml
