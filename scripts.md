@@ -1,11 +1,12 @@
 # Computational Workflow
-The preprocessing starts from raw sequencing data which 
 
 ## Bash scripts for the Raw Data Preprocessing
+The preprocessing starts from raw sequencing data which requires both large storage space and computing power. Therefore, all preprocessing steps are performed on the HZI bioinf cluster which requires submission of processes to the Sun Grid Engine ([SGE](https://en.wikipedia.org/wiki/Oracle_Grid_Engine)). 
 
 ### dropEst Pipeline
 
 ### Cell Ranger
+The [Cell Ranger](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger) pipeline is used for preprocessing of 10x Genomics Chromium droplet sequencing data. 
 
 ## R scripts for the Biological Analysis
 
