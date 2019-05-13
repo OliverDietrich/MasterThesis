@@ -1,4 +1,5 @@
 # Computational Workflow
+The preprocessing starts from raw sequencing data which 
 
 ## Bash scripts for the Raw Data Preprocessing
 
