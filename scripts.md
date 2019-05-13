@@ -5,6 +5,16 @@
 ## R scripts for the Biological Analysis
 
 ### Using bash scripts to submit R script as background processes or to SGE
+R scripts are run in sequence and submitted as a background process using a bash script (dropseq).
+
+The order is: 
+> Setup, Quality Control (QC), Feature Selection (FS), Dimensional Reduction (DR), Unsupervised Clustering (UC), Expression Plots, Labelling (Label), Gene Set Enrichment Analysis (GSEA), Gene Ontology (GO).
+
+The dropseq bash script is used to call an R script by specifying the step (e.g. QC) and the dataset (e.g. G7). This will access the R script (e.g. dropseQC.R) and submit it as a background process while producing an output log in the working directory.
+
+dropSetup.R is run from the dataset directory (/home/user/Data/Project_00000/datasets) and will create a directory based on the dataset appended with the current date (e.g. G7_2019-05-13). dropseq (a bash script) will be run from this directory (/home/user/Data/Project_00000/analysis/G7_2019-05-13). 
+
+The R dataset will be accessed from the RDS directory. Different steps (e.g. Quality Control) will create subdirectories and fill them with visualizations. The data will be stored in the same R dataset that has been loaded, thus there will always be just one R dataset per analysis. 
 
 ## Patching
 Patches are used to update the commonly used version of a script (e.g. dropseQC.R) with changes from the latest draft (e.g. dropseQC-1.7) without replacing the file.
