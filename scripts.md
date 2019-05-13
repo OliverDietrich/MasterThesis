@@ -2,13 +2,34 @@
 
 ## Bash scripts for the Raw Data Preprocessing
 
+### dropEst Pipeline
+
+### Cell Ranger
+
 ## R scripts for the Biological Analysis
 
-### Using bash scripts to submit R script as background processes or to SGE
+### 1. Setting up the R dataset
+
+### 2. Quality Control
+
+### 3. Feature Selection
+
+### 4. Dimensional Reduction
+
+### 5. Unsupervised Clustering
+
+### 6. Expression Plots
+
+### 7. Labelling
+
+### 8. Gene Set Enrichment Analysis
+
+### 9. Gene Ontology
+
+### Using bash scripts to submit R scripts as background processes
 R scripts are run in sequence and submitted as a background process using a bash script (dropseq).
 
-The order is: 
-> Setup, Quality Control (QC), Feature Selection (FS), Dimensional Reduction (DR), Unsupervised Clustering (UC), Expression Plots, Labelling (Label), Gene Set Enrichment Analysis (GSEA), Gene Ontology (GO).
+The order is specified above ranging from 2--9 starting with the Quality Control. 
 
 The dropseq bash script is used to call an R script by specifying the step (e.g. QC) and the dataset (e.g. G7). This will access the R script (e.g. dropseQC.R) and submit it as a background process while producing an output log in the working directory.
 
