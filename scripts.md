@@ -11,7 +11,14 @@ The [Cell Ranger](https://support.10xgenomics.com/single-cell-gene-expression/so
 
 ## R scripts for the Biological Analysis
 
+### The filesystem (directory tree)
+
 ### 1. Setting up the R dataset
+The Cell Ranger output can be imported as a matrix (.mtx) or in the hierarchical data format ([HDF5](https://en.wikipedia.org/wiki/Hierarchical_Data_Format), .h5). 
+
+For the matrix import two files containing the feature (gene) names and barcodes are required. The format needs to be checked as it varies between Cell Ranger versions. The matrix rownames are specified as Ensembl IDs (no redundancy) and can be converted using the features.tsv file. For ease of use a csv-file containing visualization parameters is produced which is passed on to all further scripts.
+
+> HDF5 import does not work in the current version!
 
 ### 2. Quality Control
 
