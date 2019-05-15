@@ -1,6 +1,6 @@
 # MasterThesis
 
-Analysis of single-cell RNA-seq data for the Single Cell Analysis ([SIGA](https://www.helmholtz-hiri.de/en/research/organisation/teams/team/single-cell-analysis/) group of the Helmholtz Centre for Infection Research ([HZI](https://www.helmholtz-hzi.de/en/)) Institute for RNA-based Infection Research ([HIRI](https://www.helmholtz-hiri.de/)). 
+Analysis of single-cell RNA-seq data for the Single Cell Analysis ([SIGA](https://www.helmholtz-hiri.de/en/research/organisation/teams/team/single-cell-analysis/)) group of the Helmholtz Centre for Infection Research ([HZI](https://www.helmholtz-hzi.de/en/)) Institute for RNA-based Infection Research ([HIRI](https://www.helmholtz-hiri.de/)). 
 
 This public repository contains the source code that has been used to analyze data from the following projects.  
 
