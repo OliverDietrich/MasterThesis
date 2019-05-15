@@ -10,6 +10,7 @@ This public repository contains the source code that has been used to analyze da
 3. Exploring the Transcriptional Regulation in *Trypanosoma brucei*
 4. Dissecting the Microenvironment of the Squamo-Columnar Junction of the Cervix
 5. Exploring the Cellular Repertoire of Myeloid-Derived Suppressor Cells
+6. Transcriptional Profiling of Immunotherapy-resistant Multiple Myeloma
 
 ## Workflows
 The data analysis workflow developed here is based on [Seurat](https://satijalab.org/seurat/), [Scanpy](https://scanpy.readthedocs.io/en/stable/), [Scran](https://bioconductor.org/packages/release/bioc/vignettes/scran/inst/doc/scran.html), the [single-cell RNA-seq course](https://hemberg-lab.github.io/scRNA.seq.course/index.html) from the University of Cambridge and [RNA-seq Data Analysis - A Practical Approach](https://doi.org/10.1201/b17457). 
