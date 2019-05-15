@@ -1,0 +1,4 @@
+dataset	patient	treatment	dpi	responding
+G3	1	FALSE	d 0	FALSE
+G4	1	TRUE	d 1	TRUE
+G5	1	TRUE	d 15	TRUE
