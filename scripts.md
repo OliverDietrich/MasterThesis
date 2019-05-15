@@ -39,7 +39,7 @@ For the matrix import two files containing the feature (gene) names and barcodes
 ### Using bash scripts to submit R scripts as background processes
 R scripts are run in sequence and submitted as a background process using a bash script (dropseq).
 
-The order is specified above ranging from 2--9 starting with the Quality Control. 
+The order is specified above ranging from 2-9 starting with the Quality Control. 
 
 The dropseq bash script is used to call an R script by specifying the step (e.g. QC) and the dataset (e.g. G7). This will access the R script (e.g. dropseQC.R) and submit it as a background process while producing an output log in the working directory.
 
