@@ -29,6 +29,12 @@ The datasets from 10x Genomics are labelled by indices ranging from A1 to H12. I
 >   - features.tsv
 > - web_summary.html, metrics_summary.csv, cloupe.cloupe
 
+Setting up the Seurat object (dropSetup) will create the directory
+
+> /home/user/Data/project/analysis/DS_YYYY-MM-DD
+
+However, to files are needed to start the analysis. A tsv file called [datasets]() in the datasets-folder that specifies the metadata which is specific for the datasets. And a tsv file called [projects]() in the Data-folder that specifies all the datasets that belong to a project and allows for access from root. 
+
 ### 1. Setting up the R dataset
 The Cell Ranger output can be imported as a matrix (.mtx) or in the hierarchical data format ([HDF5](https://en.wikipedia.org/wiki/Hierarchical_Data_Format), .h5). 
 
