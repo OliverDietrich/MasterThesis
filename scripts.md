@@ -18,13 +18,16 @@ The general path to all data is:
 
 > /home/user/Data/project/datasets
 
-This can either be the directory where Cell Ranger (or dropEst) has been deposited or a clone of this directory containing the raw and filtered count matrices, the web summary, metrics summary and loupe file. 
+This can either be the directory where Cell Ranger (or dropEst) has been deposited or a clone of this directory containing the raw and/or filtered count matrices and optionally the web summary, metrics summary and loupe file. 
 
-The datasets from 10x Genomics are labelled by indices ranging from A1 to H12. In all scripts the dataset is abbreviated by DS representing such indices (e.g. G3). 
+The datasets from 10x Genomics are labelled by indices ranging from A1 to H12. In all scripts the dataset is abbreviated by DS representing such indices (e.g. G3). The minimal directory conforms to:
 
 > DS/outs/
-> - filtered_gene_bc_matrices
+> - filtered_gene_bc_matrix or raw_gene_bc_matrix
 >   - matrix.mtx
+>   - barcodes.tsv
+>   - features.tsv
+> - web_summary.html, metrics_summary.csv, cloupe.cloupe
 
 ### 1. Setting up the R dataset
 The Cell Ranger output can be imported as a matrix (.mtx) or in the hierarchical data format ([HDF5](https://en.wikipedia.org/wiki/Hierarchical_Data_Format), .h5). 
