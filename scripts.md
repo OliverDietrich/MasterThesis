@@ -59,7 +59,7 @@ For the matrix import two files containing the feature (gene) names and barcodes
 ### 9. Gene Ontology
 
 ### Using bash scripts to submit R scripts as background processes
-R scripts are run in sequence and submitted as a background process using a bash script (dropseq).
+R scripts are run in sequence and submitted as a background process using a bash script ([dropseq](https://github.com/OliverDietrich/MasterThesis/blob/master/dropseq)).
 
 The order is specified above ranging from 2-9 starting with the Quality Control. 
 
