@@ -3,10 +3,11 @@
 ## Bash scripts for the Raw Data Preprocessing
 The preprocessing starts from raw sequencing data which requires both large storage space and computing power. Therefore, all preprocessing steps are performed on the HZI bioinf cluster which requires submission of processes to the Sun Grid Engine ([SGE](https://en.wikipedia.org/wiki/Oracle_Grid_Engine)). 
 
-### dropEst Pipeline
-
 ### Cell Ranger
 The [Cell Ranger](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger) pipeline is used for preprocessing of 10x Genomics Chromium droplet sequencing data. 
+
+### dropEst Pipeline
+[dropEst](https://dropest.readthedocs.io/en/latest/index.html) is a "pipeline for estimating molecular count matrices for droplet-based single-cell RNA-seq measurements". It serves as a more flexible alternative to Cell Ranger and is not specific for 10x Chromium libraries but can also handle inDrop, iCLIP, SPLiT-seq, Seq-Well and Drop-seq. Additionally, it includes UMI count correction and cell quality classification.
 
 ## R scripts for the Biological Analysis
 
