@@ -14,7 +14,7 @@ This public repository contains the source code that has been used to analyze da
 ## Workflows
 The data analysis workflow developed here is based on [Seurat](https://satijalab.org/seurat/), [Scanpy](https://scanpy.readthedocs.io/en/stable/), [Scran](https://bioconductor.org/packages/release/bioc/vignettes/scran/inst/doc/scran.html), the [single-cell RNA-seq course](https://hemberg-lab.github.io/scRNA.seq.course/index.html) from the University of Cambridge and [RNA-seq Data Analysis - A Practical Approach](https://doi.org/10.1201/b17457). 
 
-The library preparation differs greatly between conventional and single-cell RNA-seq and the choice of technology depends on the biological question at hand. The different single-cell technologies have been reviewed by Ziegenhain, et al. [2017](https://doi.org/10.1016/j.molcel.2017.01.023) and Svensson et al. [2017](https://doi.org/10.1038/nmeth.4220). 
+The library preparation differs greatly between conventional and single-cell RNA-seq and the choice of technology depends on the biological question at hand. The different single-cell technologies have been reviewed by [Ziegenhain, et al. 2017](https://doi.org/10.1016/j.molcel.2017.01.023) and [Svensson et al. 2017](https://doi.org/10.1038/nmeth.4220). 
 
 ### Preprocessing Raw-Sequencing Data & Constructing the Expression Matrix
 The processing of next-generation sequencing data is similar between single-cell and traditional RNA-seq. The general workflow for the analysis of Illumina sequencing data can be broken down into the following steps:
