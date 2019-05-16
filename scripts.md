@@ -89,4 +89,4 @@ The bash scripts activate a conda environment that includes all necessary packag
 
 The conda environment file (.yml) is available in the file collection and can be installed by the simple command
 
-> conda env create -f Seurat-2.3.4.yml
+> conda env create -f seurat-2.3.4.yml
