@@ -90,3 +90,7 @@ The bash scripts activate a conda environment that includes all necessary packag
 The conda environment file (.yml) is available in the file collection and can be installed by the simple command
 
 > conda env create -f seurat-2.3.4.yml
+
+Sometimes a package causes trouble during the installation. It can be removed from the .yml-file manually. If it was not essential this will have fixed the issue, otherwise it may need re-installation. 
+
+If packages are missing and the scripts abort with error warnings printed to output.log the missing packages have to be installed using either conda install r-"package" or from within R install.packages("package").
