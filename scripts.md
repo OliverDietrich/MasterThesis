@@ -94,3 +94,14 @@ The conda environment file (.yml) is available in the file collection and can be
 Sometimes a package causes trouble during the installation. It can be removed from the .yml-file manually. If it was not essential this will have fixed the issue, otherwise it may need re-installation. 
 
 If packages are missing and the scripts abort with error warnings printed to output.log the missing packages have to be installed using either conda install r-"package" or from within R install.packages("package").
+
+## Sun Grid Engine ([SGE](http://star.mit.edu/cluster/docs/0.93.3/guides/sge.html))
+On HZI bioinformatics cluster a scheduling system is used to direct jobs to the CPU. Therefore, tasks have to be submitted in a specialized manner using the command qsub and a script that specifies the parameters. 
+
+The status of scheduled jobs can be retrieved using the command 
+
+> qstat
+
+The availability of CPU cores and distribution of scheduled tasks can be showed by 
+
+> qstat -g c
