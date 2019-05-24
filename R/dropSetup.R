@@ -24,9 +24,9 @@ if( arg3 %in% c("h5", "mtx") ) { format <- arg3 ; print(paste("Format:", format)
   print("Error. Please specify data format ('h5' or 'mtx'). Usage: DS type format") ; quit(status = 10) }
 
 # check to which project the dataset belongs
-HOME <- paste0("/home/", Sys.getenv("USERNAME"), "/Data/")
+HOME <- paste0("/home/", Sys.getenv("USER"), "/Data/")
 if(file.exists(paste0(HOME, "projects")) == TRUE) {
-  projects <- read.table(file = paste0("/home/", Sys.getenv("USERNAME"), "/Data/", "projects"), sep = "\t", header = TRUE)
+  projects <- read.table(file = paste0("/home/", Sys.getenv("USER"), "/Data/", "projects"), sep = "\t", header = TRUE)
   projectName <- as.character(projects$project[str_detect(projects$datasets, DSname)])
 } else { print("Error. Projects file not available or path corrupt.") ; quit(status = 12) }
 
@@ -93,7 +93,7 @@ if( format %in% "h5") {
   if (str_detect(head(rownames(DS@meta.data), 1), "-") == TRUE) { 
     DS@meta.data$order <- as.factor(str_extract(string = rownames(DS@meta.data), "\\d"))
     # detect which datasets are being analyzed and subset the datasets table
-    a <- which(str_detect(levels(DS@meta.data$orig.ident), levels(datasets$dataset)) == TRUE)
+    a <- which(str_detect(levels(DS@meta.data$orig.ident), as.character(datasets$dataset)) == TRUE)
     b <- datasets[a,]
     rownames(b) <- seq(1, length(rownames(b)))
     # add information to DS@meta.data (order is assumed by name, e.g. D6, E2, E12, F5, ...) 
