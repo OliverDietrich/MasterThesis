@@ -7,14 +7,14 @@ DSname=$2 ; echo $DSname
 source activate seurat-2.3.4
 
 case $script in
-QC) Rscript /home/oliver/Data/bin/R/dropseQC.R $DSname &> output.log & ;;
-FS) Rscript /home/oliver/Data/bin/R/dropseqFS.R $DSname &> output.log & ;;
-DR) Rscript /home/oliver/Data/bin/R/dropseqDR.R $DSname &> output.log & ;;
-UC) Rscript /home/oliver/Data/bin/R/dropseqUC.R $DSname &> output.log & ;;
-ExpressionPlots) Rscript /home/oliver/Data/bin/R/dropseqExpressionPlots.R $DSname &> output.log & ;;
-Label) Rscript /home/oliver/Data/bin/R/dropseqLabel.R $DSname &> output.log & ;;
-GSEA) Rscript /home/oliver/Data/bin/R/dropseqGSEA.R $DSname &> output.log & ;;
-GO) Rscript /home/oliver/Data/bin/R/dropseqGO.R $DSname &> output.log & ;;
+QC) Rscript /home/$USER/Data/bin/R/dropseQC.R $DSname &> output.log & ;;
+FS) Rscript /home/$USER/Data/bin/R/dropseqFS.R $DSname &> output.log & ;;
+DR) Rscript /home/$USER/Data/bin/R/dropseqDR.R $DSname &> output.log & ;;
+UC) Rscript /home/$USER/Data/bin/R/dropseqUC.R $DSname &> output.log & ;;
+ExpressionPlots) Rscript /home/$USER/Data/bin/R/dropseqExpressionPlots.R $DSname &> output.log & ;;
+Label) Rscript /home/$USER/Data/bin/R/dropseqLabel.R $DSname &> output.log & ;;
+GSEA) Rscript /home/$USER/Data/bin/R/dropseqGSEA.R $DSname &> output.log & ;;
+GO) Rscript /home/$USER/Data/bin/R/dropseqGO.R $DSname &> output.log & ;;
 *) echo "Error. Incorrect script specified."
 echo "Usage: dropseq script dataset (e.g. dropseq QC G7)"
 echo "Scripts: QC, FS, DR, UC, ExpressionPlots, Label, GSEA, GO" ; exit 2 ;;
@@ -25,3 +25,4 @@ echo "Error. Please specify the dataset name" ;
 echo "Usage: dropseq scriptname DSname (e.g.dropseq QC G7)" ; exit 2
 fi
 
+exit 0
