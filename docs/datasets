@@ -1,4 +1,4 @@
 dataset	patient treatment response
-DS1 1 "day 3" responsive
-DS2 1 "day 7" non-responsive
-DS3 2 "day 3" non-responsive
+DS1 "patient 1" "day 3" responsive
+DS2 "patient 1" "day 7" non-responsive
+DS3 "patient 2" "day 3" non-responsive
