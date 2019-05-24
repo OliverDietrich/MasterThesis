@@ -63,6 +63,7 @@ The first step of selection is the calculation of so-called highly variable gene
 The second step is a mathematical procedure called principal component analysis ([PCA](https://en.wikipedia.org/wiki/Principal_component_analysis), alternatives are [CCA](https://en.wikipedia.org/wiki/Canonical_correlation) or [SVD](https://en.wikipedia.org/wiki/Singular_value_decomposition)) which entails matrix rotations to identify principal components that explain decreasing amounts of variation in the dataset. 
 
 ### 4. [Dimensional Reduction](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqDR.R)
+Visualization of multi-dimensional data requires the reduction from multiple (e.g. 20 principle components) to two dimensions. There are multiple algorithms that can perform this task among the most popular are t-distributed stochastic neighbor embedding ([tSNE](https://lvdmaaten.github.io/tsne/)) and uniform manifold approximation and projection ([UMAP](https://github.com/lmcinnes/umap)).
 
 ### 5. [Unsupervised Clustering](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqUC.R)
 
