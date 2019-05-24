@@ -24,7 +24,7 @@ set.seed(154)
 print(paste("Loading dataset", DSname))
 
 # check to which project the dataset belongs, allows for usage of absolute path
-HOME <- paste0("/home/", Sys.getenv("USERNAME"), "/Data/")
+HOME <- paste0("/home/", Sys.getenv("USER"), "/Data/")
 if(file.exists(paste0(HOME, "projects")) == TRUE) {
   projects <- read.table(file = paste0(HOME, "projects"), sep = "\t", header = TRUE)
   projectName <- as.character(projects$project[str_detect(projects$datasets, DSname)])
@@ -49,6 +49,7 @@ markers <- as.character(clusterOptions$value[match("markers", clusterOptions$par
 if( file.exists(paste0(HOME, projectName, "/markers/", markers)) == TRUE) {
   markergenes <- read.table(paste0(HOME, projectName, "/markers/", markers), sep = ",", header = TRUE)
   markers <- as.character(features$ensID[match(as.character(markergenes$gene), features$feature)])
+  markers <- markers[markers %in% rownames(DS@data)]
 } else { if(markers %in% "all") { markers <- rownames(DS@data)
   } else { markers <- DS@var.genes }}
 
