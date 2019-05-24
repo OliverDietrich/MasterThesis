@@ -37,6 +37,7 @@ The Cell Ranger output can be imported as a matrix (.mtx) or in the hierarchical
 For the matrix import two files containing the feature (gene) names and barcodes are required. The format needs to be checked as it varies between Cell Ranger versions. The matrix rownames are specified as Ensembl IDs (no redundancy) and can be converted using the features.tsv file. For ease of use a csv-file containing visualization parameters is produced which is passed on to all further scripts.
 
 > Make sure the files are unzipped, otherwise the script will not work
+
 > gunzip DS/outs/filtered_feature_bc_matrix/*
 
 Setting up the Seurat object ([dropSetup](https://github.com/OliverDietrich/MasterThesis/blob/master/bash/dropSetup.sh)) will create the directory
