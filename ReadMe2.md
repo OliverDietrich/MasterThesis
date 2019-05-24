@@ -53,7 +53,14 @@ The data matrix is filtered based on three main criteria: library size (number o
 
 > A interactive "gating" strategy would be useful but so far filtering is done by choosing upper and lower thresholds for each of the quality metrics
 
+Currently, the mitochondrial genes are inferred from the gene names (e.g. MT-ND1 vs mt-Nd1). Alternatively, the chromosome location could be used to select the genes used to calculate this percentage.
+
 ### 3. Feature Selection
+The total number of expressed genes in a population of cells often amounts to roughly 20,000. To infer cell types from transcriptomic data it is necessary to cluster the cells based on some distance metric that is derived from these features. The number of features is too high to properly analyze (see [Curse of Dimensionality](https://medium.freecodecamp.org/the-curse-of-dimensionality-how-we-can-save-big-data-from-itself-d9fa0f872335)) so we need to reduce the number of features by selecting only those which can actually explain the biological differences in question. 
+
+The first step of selection is the calculation of so-called highly variable genes (HVG) which show a high variance of expression in the population.
+
+The second step is a mathematical procedure called principal component analysis ([PCA](https://en.wikipedia.org/wiki/Principal_component_analysis), alternatives are [CCA](https://en.wikipedia.org/wiki/Canonical_correlation) or [SVD](https://en.wikipedia.org/wiki/Singular_value_decomposition)) which entails matrix rotations to identify principal components that explain decreasing amounts of variation in the dataset. 
 
 ### 4. Dimensional Reduction
 
