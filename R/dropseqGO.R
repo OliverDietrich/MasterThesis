@@ -24,7 +24,7 @@ set.seed(154)
 print(paste("Loading dataset", DSname))
 
 # check to which project the dataset belongs, allows for usage of absolute path
-HOME <- paste0("/home/", Sys.getenv("USERNAME"), "/Data/")
+HOME <- paste0("/home/", Sys.getenv("USER"), "/Data/")
 if(file.exists(paste0(HOME, "projects")) == TRUE) {
   projects <- read.table(file = paste0(HOME, "projects"), sep = "\t", header = TRUE)
   projectName <- as.character(projects$project[str_detect(projects$datasets, DSname)])
@@ -98,8 +98,8 @@ if(file.exists("GO/categories") & file.exists("GO/G6_GO_markers_pos.csv")) {
   
   ### Only on short list of markergenes
   
-  for(i in c(10,50)) {
-  markers2plot <- markers %>% group_by(cluster) %>% top_n(i, avg_logFC) %>% as.data.frame()
+  for(n in c(10,50,100)) {
+  markers2plot <- markers %>% group_by(cluster) %>% top_n(n, avg_logFC) %>% as.data.frame()
   
   entrez <- bitr(markers2plot$gene, fromType = "ENSEMBL", toType = "ENTREZID", OrgDb = "org.Hs.eg.db")
   cluster <- markers2plot$cluster[match(entrez$ENSEMBL, markers2plot$gene)]
@@ -115,10 +115,10 @@ if(file.exists("GO/categories") & file.exists("GO/G6_GO_markers_pos.csv")) {
   }
   
   ck1 <- compareCluster(geneCluster = EnsembleList, fun = "enrichGO", OrgDb = "org.Hs.eg.db", ont = "BP")
-  write_csv(ck1@compareClusterResult, path = paste0("GO/", DSname, "_", i, "_GO_markers_pos.csv"))
+  write_csv(ck1@compareClusterResult, path = paste0("GO/", DSname, "_", n, "_GO_markers_pos.csv"))
   
   p1 <- dotplot(ck1, showCategory = 3, font.size = 13, by = "geneRatio")
-  ggsave(filename = paste0(DSname, "_", i, "_GO_BP_pos.eps"), plot = p1, device = "eps", path = paste0("GO"), width = 10, height = 8)
+  ggsave(filename = paste0(DSname, "_", n, "_GO_BP_pos.eps"), plot = p1, device = "eps", path = paste0("GO"), width = 10, height = 8)
   } # end of for loop
 } # end of if statement
 
