@@ -27,7 +27,7 @@ set.seed(154)
 print(paste("Loading dataset", DSname))
 
 # check to which project the dataset belongs, allows for usage of absolute path
-HOME <- paste0("/home/", Sys.getenv("USERNAME"), "/Data/")
+HOME <- paste0("/home/", Sys.getenv("USER"), "/Data/")
 if(file.exists(paste0(HOME, "projects")) == TRUE) {
   projects <- read.table(file = paste0(HOME, "projects"), sep = "\t", header = TRUE)
   projectName <- as.character(projects$project[str_detect(projects$datasets, DSname)])
