@@ -29,7 +29,7 @@ The datasets from 10x Genomics are labelled by indices ranging from A1 to H12. I
 >   - features.tsv
 > - web_summary.html, metrics_summary.csv, cloupe.cloupe
 
-Setting up the Seurat object ([dropSetup](https://github.com/OliverDietrich/MasterThesis/blob/master/dropSetup.sh)) will create the directory
+Setting up the Seurat object ([dropSetup](https://github.com/OliverDietrich/MasterThesis/blob/master/bash/dropSetup.sh)) will create the directory
 
 > /home/$USER/Data/project/analysis/DS_YYYY-MM-DD
 
