@@ -78,8 +78,10 @@ The steps for the analysis include:
     - Hierarchical Density-Based Spatial Clustering of Applications with Noise ([HDBSCAN](https://hdbscan.readthedocs.io/en/latest/index.html)).
 5. Gene Set Enrichment Analysis
 based on annotated clusters
-    - Wilcoxon rank sum test  
+    - Wilcoxon rank sum test 
+    - DESeq2
+    - MAST
     
 ---
 
-The computational workflow for the biological analysis is described in [scripts.md](scripts.md)
+The computational workflow for the biological analysis is described [here](ReadMe2.md)
