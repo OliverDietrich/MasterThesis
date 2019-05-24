@@ -1,4 +1,4 @@
-dataset	patient	treatment	dpi	responding
-G3	1	FALSE	d 0	FALSE
-G4	1	TRUE	d 1	TRUE
-G5	1	TRUE	d 15	TRUE
+dataset	patient treatment response
+DS1	1 "day 3" responsive
+DS2	1 "day 7" non-responsive
+DS3 2 "day 3" non-responsive
