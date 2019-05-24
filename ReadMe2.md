@@ -40,13 +40,18 @@ For the matrix import two files containing the feature (gene) names and barcodes
 >
 > gunzip DS/outs/filtered_feature_bc_matrix/*
 
-Setting up the Seurat object ([dropSetup](https://github.com/OliverDietrich/MasterThesis/blob/master/bash/dropSetup.sh)) will create the directory
+Setting up the Seurat object will create the directory
 
 > /home/$USER/Data/project/analysis/DS_YYYY-MM-DD
 
 However, to files are needed to start the analysis. A tsv file called [datasets](https://github.com/OliverDietrich/MasterThesis/blob/master/docs/datasets) in the datasets-folder that specifies the metadata which is specific for the datasets. And a tsv file called [projects](https://github.com/OliverDietrich/MasterThesis/blob/master/docs/projects) in the Data-folder that specifies all the datasets that belong to a project and allows for access from root. Additionally, a directory "markers" can be put into the projects-folder that contains the [markergenes.csv](https://github.com/OliverDietrich/MasterThesis/blob/master/docs/markergenes.csv) which can be used to only print plots showing the expression of interesting markergenes instead of highly variable genes (HVG) or all genes.
 
 ### 2. Quality Control
+Once the data is imported into R (and stored as an R dataset) the quality of all barcodes (cells) is assessed. This can be done based on either the raw or filtered matrix. However, since our filtering criteria are generally more stringent than the thresholds set by Cell Ranger it is often preferable to import the filtered matrix to reduce memory consumption and runtime.
+
+The data matrix is filtered based on three main criteria: library size (number of unique molecular identifiers, nUMI), number of genes (nGene) and the percentage of mitochondrial genes (pMito) per barcode. The most common visualizations are violin plots (one each) and scatterplots (nGene v. nUMI, nGene v. pMito). The Scatterplots are usually the most informative. Obviously, there should be no correlation between the number of expressed genes and the percentage of mitochondrial genes whereas the number of UMI should strictly correlate to the former.
+
+> A interactive "gating" strategy would be useful but so far filtering is done by choosing upper and lower thresholds for each of the quality metrics
 
 ### 3. Feature Selection
 
