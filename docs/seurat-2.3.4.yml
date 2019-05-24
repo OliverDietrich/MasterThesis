@@ -445,4 +445,3 @@ dependencies:
   - zeromq=4.2.5=hf484d3e_1006
   - zlib=1.2.11=h14c3975_1004
 prefix: /home/oliver/miniconda3/envs/seurat-2.3.4
-
