@@ -46,7 +46,7 @@ Setting up the Seurat object will create the directory
 
 However, to files are needed to start the analysis. A tsv file called [datasets](https://github.com/OliverDietrich/MasterThesis/blob/master/docs/datasets) in the datasets-folder that specifies the metadata which is specific for the datasets. And a tsv file called [projects](https://github.com/OliverDietrich/MasterThesis/blob/master/docs/projects) in the Data-folder that specifies all the datasets that belong to a project and allows for access from root. Additionally, a directory "markers" can be put into the projects-folder that contains the [markergenes.csv](https://github.com/OliverDietrich/MasterThesis/blob/master/docs/markergenes.csv) which can be used to only print plots showing the expression of interesting markergenes instead of highly variable genes (HVG) or all genes.
 
-### 2. Quality Control
+### 2. [Quality Control](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseQC.R)
 Once the data is imported into R (and stored as an R dataset) the quality of all barcodes (cells) is assessed. This can be done based on either the raw or filtered matrix. However, since our filtering criteria are generally more stringent than the thresholds set by Cell Ranger it is often preferable to import the filtered matrix to reduce memory consumption and runtime.
 
 The data matrix is filtered based on three main criteria: library size (number of unique molecular identifiers, nUMI), number of genes (nGene) and the percentage of mitochondrial genes (pMito) per barcode. The most common visualizations are violin plots (one each) and scatterplots (nGene v. nUMI, nGene v. pMito). The Scatterplots are usually the most informative. Obviously, there should be no correlation between the number of expressed genes and the percentage of mitochondrial genes whereas the number of UMI should strictly correlate to the former.
@@ -55,20 +55,20 @@ The data matrix is filtered based on three main criteria: library size (number o
 
 Currently, the mitochondrial genes are inferred from the gene names (e.g. MT-ND1 vs mt-Nd1). Alternatively, the chromosome location could be used to select the genes used to calculate this percentage.
 
-### 3. Feature Selection
+### 3. [Feature Selection](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqFS.R)
 The total number of expressed genes in a population of cells often amounts to roughly 20,000. To infer cell types from transcriptomic data it is necessary to cluster the cells based on some distance metric that is derived from these features. The number of features is too high to properly analyze (see [Curse of Dimensionality](https://medium.freecodecamp.org/the-curse-of-dimensionality-how-we-can-save-big-data-from-itself-d9fa0f872335)) so we need to reduce the number of features by selecting only those which can actually explain the biological differences in question. 
 
 The first step of selection is the calculation of so-called highly variable genes (HVG) which show a high variance of expression in the population.
 
 The second step is a mathematical procedure called principal component analysis ([PCA](https://en.wikipedia.org/wiki/Principal_component_analysis), alternatives are [CCA](https://en.wikipedia.org/wiki/Canonical_correlation) or [SVD](https://en.wikipedia.org/wiki/Singular_value_decomposition)) which entails matrix rotations to identify principal components that explain decreasing amounts of variation in the dataset. 
 
-### 4. Dimensional Reduction
+### 4. [Dimensional Reduction](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqDR.R)
 
-### 5. Unsupervised Clustering
+### 5. [Unsupervised Clustering](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqUC.R)
 
-### 6. Expression Plots
+### 6. [Expression Plots](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqExpressionPlots.R)
 
-### 7. Labelling
+### 7. [Labelling](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqLabel.R)
 
 ### 8. Gene Set Enrichment Analysis
 
