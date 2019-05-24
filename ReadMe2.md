@@ -70,9 +70,9 @@ The second step is a mathematical procedure called principal component analysis 
 
 ### 7. [Labelling](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqLabel.R)
 
-### 8. Gene Set Enrichment Analysis
+### 8. [Gene Set Enrichment Analysis](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqGSEA.R)
 
-### 9. Gene Ontology
+### 9. [Gene Ontology](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqGO.R)
 
 ### Using bash scripts to submit R scripts as background processes
 R scripts are run in sequence and submitted as a background process using a bash script ([dropseq](https://github.com/OliverDietrich/MasterThesis/blob/master/bash/dropseq)).
