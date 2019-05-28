@@ -76,7 +76,7 @@ The steps for the analysis include:
     - [Louvain](https://perso.uclouvain.be/vincent.blondel/research/louvain.html) method for community detection in large networks
     - Smart local moving algorithm for large-scale modularity-based community detection ([SLM](http://www.ludowaltman.nl/slm/))
     - Hierarchical Density-Based Spatial Clustering of Applications with Noise ([HDBSCAN](https://hdbscan.readthedocs.io/en/latest/index.html)).
-5. Gene Set Enrichment Analysis
+5. Differential Gene Expression
 based on annotated clusters
     - Wilcoxon rank sum test 
     - DESeq2
