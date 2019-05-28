@@ -129,3 +129,5 @@ Visualization is key when it comes to data analysis. Changing plots in R is very
 Currently, flexibility is achieved by using an external file that specifies image metrics and can be freely manipulated. This requires, however, the repeated execution of scripts and optimally the separation of scripts into computation and visualization. 
 
 In the future, this rather tedious workflow should be replaced by using [Shiny](https://shiny.rstudio.com/) applications that produce reactive plots that can be easily manipulated. Moreover, only the R dataset is required which substantially simplifies the transfer of data while reducing the amount of blocked disk space. 
+
+> The preliminary code for the Shiny app can be found [here](https://github.com/OliverDietrich/MasterThesis/blob/master/shinyApp.R)
