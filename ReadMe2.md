@@ -122,3 +122,10 @@ The status of scheduled jobs can be retrieved using the command
 The availability of CPU cores and distribution of scheduled tasks can be showed by 
 
 > qstat -g c
+
+## Shiny Apps
+Visualization is key when it comes to data analysis. Changing plots in R is very flexible and easy but requires coding skills. Exporting image files to provide browsable data is therefore necessary when working with computationally less trained collaborators. This requires fixed export criteria which severely decrease the flexibility as well as adding a large footprint of the analysis in terms of disk usage. 
+
+Currently, flexibility is achieved by using an external file that specifies image metrics and can be freely manipulated. This requires, however, the repeated execution of scripts and optimally the separation of scripts into computation and visualization. 
+
+In the future, this rather tedious workflow should be replaced by using [Shiny](https://shiny.rstudio.com/) applications that produce responsive plots that can be easily manipulated. Moreover, only the R dataset is required which substantially simplifies the transfer of data while reducing the amount of blocked disk space. 
