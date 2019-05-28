@@ -85,3 +85,13 @@ based on annotated clusters
 ---
 
 The computational workflow for the biological analysis is described [here](ReadMe2.md)
+
+--- 
+
+### Future development
+
+1. Inference Regularory Networks ([SCENIC](https://github.com/aertslab/SCENIC))
+2. Rare Cell Identification ([RaceID](https://doi.org/10.1038/nature14966))
+3. Scoring of Batch Effect ([k-Bet](https://github.com/theislab/kBET/blob/master/README.md))
+4. Removal of Batch Effect ([CCA](https://doi.org/10.1038/nbt.4096), [MNN](https://doi.org/10.1038/nbt.4091))
+5. Automating Feature Selection and Clustering ([GAP statistic](https://statweb.stanford.edu/~gwalther/gap))
