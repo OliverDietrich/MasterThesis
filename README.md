@@ -20,7 +20,7 @@ The library preparation differs greatly between conventional and single-cell RNA
 ### Preprocessing Raw-Sequencing Data & Constructing the Expression Matrix
 The processing of next-generation sequencing data is similar between single-cell and traditional RNA-seq. The general workflow for the analysis of Illumina sequencing data can be broken down into the following steps:
 
-1. Demultiplexing and conversion to FASTQ-format
+1. Demultiplexing and conversion to [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format)-format
 
 The primary output for data analysis are per-cycle BCL basecall files from Illumina Sequencers. First, these files need to be de-multiplexed and converted to FASTQ-format by the Illumina software [bcl2fastq](https://support.illumina.com/content/dam/illumina-support/documents/documentation/software_documentation/bcl2fastq/bcl2fastq_letterbooklet_15038058brpmi.pdf). 
 
