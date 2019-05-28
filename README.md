@@ -78,9 +78,9 @@ The steps for the analysis include:
     - Hierarchical Density-Based Spatial Clustering of Applications with Noise ([HDBSCAN](https://hdbscan.readthedocs.io/en/latest/index.html)).
 5. Differential Gene Expression
 based on annotated clusters
-    - Wilcoxon rank sum test 
-    - DESeq2
-    - MAST
+    - [Wilcoxon rank sum test](https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test)
+    - [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
+    - [MAST](https://bioconductor.org/packages/3.9/bioc/html/MAST.html)
     
 ---
 
