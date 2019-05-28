@@ -3,17 +3,22 @@
 
 library(shiny)
 
-library(seurat)
+library(Seurat)
 library(tidyverse)
+
+DS <- readRDS("/home/od/Data/Cindrilla/analysis/G10_2019-03-02/G10_epithelial_2019-02-19/Rdatasets/G10_epithelial_labelled.Rds")
+features <- read.table("/home/od/Data/Cindrilla/datasets/G12/outs/filtered_feature_bc_matrix/features.tsv", header = FALSE, sep = "\t")
+colnames(features) <- c("ens_id", "gene", "type")
+
+all_genes <- features$gene[match(rownames(DS@data), features$ens_id)]
 
 # User Interface
 ui <- fluidPage(
   # Input functions
-  sliderInput(inputId = "num", label = "Choose the binwidth",
-              value = 5, min = 1, max = 100),
-  selectInput(inputId = "categoryX", label = "Choose a category for the x-axis", choices = colnames(murders)),
-  selectInput(inputId = "categoryY", label = "Choose a category for the y-axis", choices = colnames(murders)),
-  selectInput(inputId = "color", label = "Choose a category for the color", choices = colnames(murders)),
+  sliderInput(inputId = "alpha", label = "Choose a transparency level",
+              value = 0.5, min = 0, max = 1),
+  sliderInput(inputId = "size", label = "Choose dot size", value = 2, min = 0.1, max = 20),
+  selectInput(inputId = "color", label = "Choose Gene", choices = all_genes),
   plotOutput("scatter")
   # Output functions
 )
@@ -21,15 +26,12 @@ ui <- fluidPage(
 # Server Instructions
 server <- function(input, output) {
   
-  readRDS("/home/od/Data/Cindrilla/analysis/G10_2019-03-02/G10_epithelial_2019-02-19/Rdatasets/G10_epithelial_labelled.Rds")
-  
   output$scatter <- renderPlot({
-    ggplot(murders, aes(
-      x = murders[,input$categoryX], 
-      y = murders[,input$categoryY],
-      col = murders[,input$color]
-      )) + 
-      geom_point(size = input$num)
+    
+    ggplot(as.data.frame(DS@dr$umap@cell.embeddings), aes(
+      x = UMAP1, y = UMAP2, col = DS@data[features$ens_id[match(input$color, features$gene)],]
+    )) +
+      geom_point(size = input$size, alpha = input$alpha)
   })
 }
 
