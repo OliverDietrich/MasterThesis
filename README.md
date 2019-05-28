@@ -57,10 +57,10 @@ The script for the analysis of Drop-Seq data is currently based on the [Seurat](
 
 The steps for the analysis include:
 
-1. Quality Control (QC)
+1. Quality Control ([QC](https://doi.org/10.1093/bioinformatics/btw777))
     - Adding Metadata
     - Filtering
-2. Feature Selection
+2. [Feature Selection](https://doi.org/10.1101/574574)
     - Normalization
     - Variance based selection of genes
     - Principle component analysis ([PCA](https://doi.org/10.1038/nmeth.4346))
