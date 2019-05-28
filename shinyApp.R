@@ -11,29 +11,63 @@ features <- read.table("/home/od/Data/Cindrilla/datasets/G12/outs/filtered_featu
 colnames(features) <- c("ens_id", "gene", "type")
 
 all_genes <- features$gene[match(rownames(DS@data), features$ens_id)]
+metadata <- colnames(DS@meta.data)
 
 # User Interface
 ui <- fluidPage(
-  # Input functions
-  sliderInput(inputId = "alpha", label = "Choose a transparency level",
-              value = 0.5, min = 0, max = 1),
-  sliderInput(inputId = "size", label = "Choose dot size", value = 2, min = 0.1, max = 20),
-  selectInput(inputId = "color", label = "Choose Gene", choices = all_genes),
-  plotOutput("scatter")
-  # Output functions
-)
+
+    sidebarLayout(
+    sidebarPanel(
+      sliderInput(inputId = "alpha", label = "Choose a transparency level",
+                  value = 0.5, min = 0, max = 1),
+      sliderInput(inputId = "size", label = "Choose dot size", value = 2, min = 0.1, max = 20),
+      selectInput(inputId = "all_genes", label = "Choose Gene", choices = all_genes)
+    ),
+    mainPanel(
+      plotOutput("umap_expression")
+      )
+    ), # end of sidebar 1
+  
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput(inputId = "alpha", label = "Choose a transparency level",
+                  value = 0.5, min = 0, max = 1),
+      sliderInput(inputId = "size", label = "Choose dot size", value = 2, min = 0.1, max = 20),
+      selectInput(inputId = "metadata", label = "Choose Gene", choices = metadata)
+    ),
+    mainPanel(
+      plotOutput("umap_metadata")
+    )
+  ) # end of sidebar 2
+  
+) # end of input
 
 # Server Instructions
 server <- function(input, output) {
   
-  output$scatter <- renderPlot({
-    
+  output$umap_expression <- renderPlot({
     ggplot(as.data.frame(DS@dr$umap@cell.embeddings), aes(
-      x = UMAP1, y = UMAP2, col = DS@data[features$ens_id[match(input$color, features$gene)],]
+      x = UMAP1, y = UMAP2, col = DS@data[features$ens_id[match(input$all_genes, features$gene)],]
     )) +
-      geom_point(size = input$size, alpha = input$alpha)
-  })
-}
+      geom_point(size = input$size, alpha = input$alpha) +
+      labs(title = input$color) +
+      theme(
+        legend.title = element_blank()
+      )
+  }) # end of umap_expression
+  
+  output$umap_metadata <- renderPlot({
+    ggplot(as.data.frame(DS@dr$umap@cell.embeddings), aes(
+      x = UMAP1, y = UMAP2, col = DS@meta.data[,input$metadata]
+    )) +
+      geom_point(size = input$size, alpha = input$alpha) +
+      labs(title = input$color) +
+      theme(
+        legend.title = element_blank()
+      )
+  }) # end of umap_metadata
+  
+} # end of server instructions
 
 # execution
 shinyApp(ui = ui, server = server)
