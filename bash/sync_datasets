@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Usage: sync_datasets project "samples" username
+
+project=$1
+samples=$2
+username=$3
+
+for i in $samples
+do
+mkdir $i
+mkdir $i/outs
+
+scp -r username@bioinf001:/vol/projects/$username/$project/datasets/$i/outs/\{web_summary.html,metrics_summary.csv,cloupe.cloupe,raw_feature_bc_matrix,filtered_feature_bc_matrix\} $i/outs/
+done
