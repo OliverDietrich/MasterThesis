@@ -87,5 +87,5 @@ based on annotated clusters
 1. Inference Regularory Networks ([SCENIC](https://github.com/aertslab/SCENIC))
 2. Rare Cell Identification ([RaceID](https://doi.org/10.1038/nature14966))
 3. Scoring of Batch Effect ([k-Bet](https://github.com/theislab/kBET/blob/master/README.md))
-4. Removal of Batch Effect ([CCA](https://doi.org/10.1038/nbt.4096), [MNN](https://doi.org/10.1038/nbt.4091))
+4. Removal of Batch Effect ([CCA](https://doi.org/10.1038/nbt.4096), [MNN](https://doi.org/10.1038/nbt.4091), [scMerge](https://doi.org/10.1073/pnas.1820006116))
 5. Automating Feature Selection and Clustering ([GAP statistic](https://statweb.stanford.edu/~gwalther/gap))
