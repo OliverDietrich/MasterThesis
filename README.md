@@ -4,7 +4,6 @@ Analysis of single-cell RNA-seq data for the Single Cell Analysis ([SIGA](https:
 
 This public repository contains the source code that has been used to analyze data from the following projects.  
 
-Projects:
 1. Transcriptional Profiling of the Immune Response to Influenza Vaccination
 2. Dissecting the Cellular Composition of Pediatric Kidney Tumors
 3. Exploring the Transcriptional Regulation in *Trypanosoma brucei*
