@@ -94,4 +94,4 @@ based on annotated clusters
 9. [clusterExperiment](https://bioconductor.org/packages/release/bioc/vignettes/clusterExperiment/inst/doc/clusterExperimentTutorial.html)
 10. Gene Ontology ([clusterProfiler](https://bioconductor.org/packages/release/bioc/vignettes/clusterProfiler/inst/doc/clusterProfiler.html))
 11. [SCDE](http://hms-dbmi.github.io/scde/)
-12. Pseudotime analysis ([Monocle](http://cole-trapnell-lab.github.io/monocle-release/), [Slingshot](https://bioconductor.org/packages/release/bioc/vignettes/slingshot/inst/doc/slingshot.html))
+12. Pseudotime analysis ([Monocle](http://cole-trapnell-lab.github.io/monocle-release/), [Slingshot](https://bioconductor.org/packages/release/bioc/vignettes/slingshot/inst/doc/slingshot.html), [PAGA](https://scanpy-tutorials.readthedocs.io/en/latest/paga-paul15.html))
