@@ -2,15 +2,6 @@
 
 Analysis of single-cell RNA-seq data for the Single Cell Analysis ([SIGA](https://www.helmholtz-hiri.de/en/research/organisation/teams/team/single-cell-analysis/)) group of the Helmholtz Centre for Infection Research ([HZI](https://www.helmholtz-hzi.de/en/)) Institute for RNA-based Infection Research ([HIRI](https://www.helmholtz-hiri.de/)). 
 
-This public repository contains the source code that has been used to analyze data from the following projects.  
-
-1. Transcriptional Profiling of the Immune Response to Influenza Vaccination
-2. Dissecting the Cellular Composition of Pediatric Kidney Tumors
-3. Exploring the Transcriptional Regulation in *Trypanosoma brucei*
-4. Dissecting the Microenvironment of the Squamo-Columnar Junction of the Cervix
-5. Exploring the Cellular Repertoire of Myeloid-Derived Suppressor Cells
-6. Transcriptional Profiling of Immunotherapy-resistant Multiple Myeloma
-
 ## Workflows
 The data analysis workflow developed here is based on [Seurat](https://satijalab.org/seurat/), [Scanpy](https://scanpy.readthedocs.io/en/stable/), [Scran](https://bioconductor.org/packages/release/bioc/vignettes/scran/inst/doc/scran.html), the [single-cell RNA-seq course](https://scrnaseq-course.cog.sanger.ac.uk/website/introduction-to-single-cell-rna-seq.html) from the University of Cambridge and [RNA-seq Data Analysis - A Practical Approach](https://doi.org/10.1201/b17457). 
 
