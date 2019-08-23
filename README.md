@@ -51,20 +51,20 @@ The steps for the analysis include:
     - Adding Metadata
     - Filtering
 2. Normalization
-2. [Feature Selection](https://doi.org/10.1101/574574)
+3. [Feature Selection](https://doi.org/10.1101/574574)
     - Variance based selection of genes
     - Principle component analysis ([PCA](https://doi.org/10.1038/nmeth.4346))
-3. Dimensional Reduction
+4. Dimensional Reduction
     - t-distributed Stochastic Neighbor Embedding ([tSNE](https://lvdmaaten.github.io/tsne/))
     - Fast interpolation-based t-SNE ([FI-tSNE](https://doi.org/10.1038/s41592-018-0308-4))
     - Uniform Manifold Approximation and Projection ([UMAP](https://umap-learn.readthedocs.io/en/latest/))
     - Diffusion Maps ([DM](https://doi.org/10.1093/bioinformatics/btv325))
     - [SPRING](https://doi.org/10.1093/bioinformatics/btx792)
-4. Clustering
+5. Clustering
     - [Louvain](https://perso.uclouvain.be/vincent.blondel/research/louvain.html) method for community detection in large networks
     - Smart local moving algorithm for large-scale modularity-based community detection ([SLM](http://www.ludowaltman.nl/slm/))
     - Hierarchical Density-Based Spatial Clustering of Applications with Noise ([HDBSCAN](https://hdbscan.readthedocs.io/en/latest/index.html)).
-5. Differential Gene Expression
+6. Differential Gene Expression
 based on annotated clusters
     - [Wilcoxon rank sum test](https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test)
     - [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
