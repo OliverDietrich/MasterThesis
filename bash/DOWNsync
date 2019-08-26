@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Usage: DOWNsync project analysis username
-
-project=$1
-analysis=$2
-username=$3
-
-rsync -avv -e ssh $username@bioinf001:/home/$username/Data/$project/analysis/$analysis/* /home/$USER/Data/$project/analysis/$analysis
