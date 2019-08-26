@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Usage: project analysis username
-
-project=$1
-analysis=$2
-username=$3
-
-scp -r /home/$USER/Data/$project/analysis/$analysis/Input/* $username@bioinf001:/home/$username/Data/$project/analysis/$analysis/Input
