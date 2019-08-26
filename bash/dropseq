@@ -13,11 +13,11 @@ DR) Rscript /home/$USER/Data/bin/R/dropseqDR.R $DSname &> output.log & ;;
 UC) Rscript /home/$USER/Data/bin/R/dropseqUC.R $DSname &> output.log & ;;
 ExpressionPlots) Rscript /home/$USER/Data/bin/R/dropseqExpressionPlots.R $DSname &> output.log & ;;
 Label) Rscript /home/$USER/Data/bin/R/dropseqLabel.R $DSname &> output.log & ;;
-GSEA) Rscript /home/$USER/Data/bin/R/dropseqGSEA.R $DSname &> output.log & ;;
+DE) Rscript /home/$USER/Data/bin/R/dropseqGSEA.R $DSname &> output.log & ;;
 GO) Rscript /home/$USER/Data/bin/R/dropseqGO.R $DSname &> output.log & ;;
 *) echo "Error. Incorrect script specified."
 echo "Usage: dropseq script dataset (e.g. dropseq QC G7)"
-echo "Scripts: QC, FS, DR, UC, ExpressionPlots, Label, GSEA, GO" ; exit 2 ;;
+echo "Scripts: QC, FS, DR, UC, ExpressionPlots, Label, DE, GO" ; exit 2 ;;
 esac
 
 if [ "$DSname" = "" ] ; then
