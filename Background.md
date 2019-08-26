@@ -2,12 +2,14 @@
 
 Analysis of single-cell RNA-seq data for the Single Cell Analysis ([SIGA](https://www.helmholtz-hiri.de/en/research/organisation/teams/team/single-cell-analysis/)) group of the Helmholtz Centre for Infection Research ([HZI](https://www.helmholtz-hzi.de/en/)) Institute for RNA-based Infection Research ([HIRI](https://www.helmholtz-hiri.de/)). 
 
-## Workflows
-The data analysis workflow developed here is based on [Seurat](https://satijalab.org/seurat/), [Scanpy](https://scanpy.readthedocs.io/en/stable/), [Scran](https://bioconductor.org/packages/release/bioc/vignettes/scran/inst/doc/scran.html), the [single-cell RNA-seq course](https://scrnaseq-course.cog.sanger.ac.uk/website/introduction-to-single-cell-rna-seq.html) from the University of Cambridge and [RNA-seq Data Analysis - A Practical Approach](https://doi.org/10.1201/b17457). 
+The data analysis workflow developed here is based on [Seurat](https://satijalab.org/seurat/) and guided by [Scanpy](https://scanpy.readthedocs.io/en/stable/), [Scran](https://bioconductor.org/packages/release/bioc/vignettes/scran/inst/doc/scran.html), the [single-cell RNA-seq course](https://scrnaseq-course.cog.sanger.ac.uk/website/introduction-to-single-cell-rna-seq.html) from the University of Cambridge and [RNA-seq Data Analysis - A Practical Approach](https://doi.org/10.1201/b17457). 
+
+## Preprocessing 
+
+> From Raw-Sequencing Data to Constructing the Expression Matrix
 
 The library preparation differs greatly between conventional and single-cell RNA-seq and the choice of technology depends on the biological question at hand. The different single-cell technologies have been reviewed by [Ziegenhain, et al. 2017](https://doi.org/10.1016/j.molcel.2017.01.023) and [Svensson et al. 2017](https://doi.org/10.1038/nmeth.4220). 
 
-### Preprocessing Raw-Sequencing Data & Constructing the Expression Matrix
 The processing of next-generation sequencing data is similar between single-cell and traditional RNA-seq. The general workflow for the analysis of Illumina sequencing data can be broken down into the following steps:
 
 1. Demultiplexing and conversion to [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format)-format
@@ -40,7 +42,9 @@ Collapsing reads based on a shared UMI-sequence is necessary for UMI-based scRNA
 
 > The pre-processing of 10x Chromium Drop-Seq data has been streamlined by the [Cell Ranger](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger) software.
 
-### Biological Analysis
+> [dropEst](https://dropest.readthedocs.io/en/latest/index.html) is a "pipeline for estimating molecular count matrices for droplet-based single-cell RNA-seq measurements". It serves as a more flexible alternative to Cell Ranger and is not specific for 10x Chromium libraries but can also handle inDrop, iCLIP, SPLiT-seq, Seq-Well and Drop-seq. Additionally, it includes UMI count correction and cell quality classification.
+
+## Biological Analysis
 The Biological Analysis of single-cell RNA-seq data starts with an expression matrix where the columns represent barcodes (cells) and the rows represent features (genes). The challenges in the general workflow have been described well by [Kiselev, Andrews and Hemberg](https://www.nature.com/articles/s41576-018-0088-9). A recent article by [Luecken and Theis] (https://doi.org/10.15252/msb.20188746) presents the current best practices in single-cell RNA-seq analysis.
 
 The script for the analysis of Drop-Seq data is currently based on the [Seurat](https://satijalab.org/seurat/) workflow and executed in [R](https://www.r-project.org/). 
@@ -70,10 +74,56 @@ based on annotated clusters
     - [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
     - [MAST](https://bioconductor.org/packages/3.9/bioc/html/MAST.html)
 
-> The computational workflow for the biological analysis is described [here](ReadMe2.md)
+### The filesystem (directory tree)
+Since all scripts are executable from the command line ([bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) terminal) they rely on a fixed architecture of one branch of the filesystem. 
+
+The general path to all data is:
+
+> /home/$USER/Data/project/datasets
+
+This can either be the directory where Cell Ranger (or dropEst) has been deposited or a clone of this directory containing the raw and/or filtered count matrices and optionally the web summary, metrics summary and loupe file. 
+
+The datasets from 10x Genomics are labelled by indices ranging from A1 to H12. In all scripts the dataset is abbreviated by DS representing such indices (e.g. G3). The minimal directory conforms to:
+
+> DS/outs/
+> - filtered_gene_bc_matrix or raw_gene_bc_matrix
+>   - matrix.mtx
+>   - barcodes.tsv
+>   - features.tsv
+> - web_summary.html, metrics_summary.csv, cloupe.cloupe
+
+### Conda environment
+The bash scripts activate a conda environment that includes all necessary packages (dependencies) in the correct version for the execution of the script. 
+
+The conda environment file (.yml) is available in the file collection and can be installed by the simple command
+
+> conda env create -f seurat-2.3.4.yml
+
+Sometimes a package causes trouble during the installation. It can be removed from the .yml-file manually. If it was not essential this will have fixed the issue, otherwise it may need re-installation. 
+
+If packages are missing and the scripts abort with error warnings printed to output.log the missing packages have to be installed using either conda install r-"package" or from within R install.packages("package").
+
+### Using bash scripts to submit R scripts as background processes
+R scripts are run in sequence and submitted as a background process using a bash script ([dropseq](https://github.com/OliverDietrich/MasterThesis/blob/master/bash/dropseq)).
+
+The order is specified above ranging from 2-9 starting with the Quality Control. 
+
+The dropseq bash script is used to call an R script by specifying the step (e.g. QC) and the dataset (e.g. G7). This will access the R script (e.g. dropseQC.R) and submit it as a background process while producing an output log in the working directory.
+
+dropSetup.R is run from the dataset directory (/home/$USER/Data/project/datasets) and will create a directory based on the dataset appended with the current date (e.g. G7_2019-05-13). dropseq (a bash script) will be run from this directory (/home/$USER/Data/project/analysis/G7_2019-05-13). 
+
+The R dataset will be accessed from the RDS directory. Different steps (e.g. Quality Control) will create subdirectories and fill them with visualizations. The data will be stored in the same R dataset that has been loaded, thus there will always be just one R dataset per analysis. 
+
+### Shiny App
+Visualization is key when it comes to data analysis. Changing plots in R is very flexible and easy but requires coding skills. Exporting image files to provide browsable data is therefore necessary when working with computationally less trained collaborators. This requires fixed export criteria which severely decrease the flexibility as well as adding a large footprint of the analysis in terms of disk usage. 
+
+Currently, flexibility is achieved by using an external file that specifies image metrics and can be freely manipulated. This requires, however, the repeated execution of scripts and optimally the separation of scripts into computation and visualization. 
+
+In the future, this rather tedious workflow should be replaced by using [Shiny](https://shiny.rstudio.com/) applications that produce reactive plots that can be easily manipulated. Moreover, only the R dataset is required which substantially simplifies the transfer of data while reducing the amount of blocked disk space. 
+
+> The preliminary code for the Shiny app can be found [here](https://github.com/OliverDietrich/MasterThesis/blob/master/shinyApp.R)
 
 ## Future development
-
 1. Inference Regularory Networks ([SCENIC](https://github.com/aertslab/SCENIC))
 2. Rare Cell Identification ([RaceID](https://doi.org/10.1038/nature14966))
 3. Scoring of Batch Effect ([k-Bet](https://github.com/theislab/kBET/blob/master/README.md))
