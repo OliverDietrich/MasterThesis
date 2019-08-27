@@ -116,7 +116,7 @@ Visualization of multi-dimensional data requires the reduction from multiple (e.
 
 ### 7. [Labelling](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqLabel.R)
 
-### 8. [Gene Set Enrichment Analysis](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqGSEA.R)
+### 8. Differential Expression Analysis [(DE)](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqGSEA.R)
 
 ### 9. [Gene Ontology](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqGO.R)
 
