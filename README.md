@@ -51,24 +51,24 @@ The script for the analysis of Drop-Seq data is currently based on the [Seurat](
 
 The steps for the analysis include:
 
-1. Quality Control ([QC](https://doi.org/10.1093/bioinformatics/btw777))
+- Quality Control ([QC](https://doi.org/10.1093/bioinformatics/btw777))
     - Adding Metadata
     - Filtering
-2. Normalization
-3. [Feature Selection](https://doi.org/10.1101/574574)
+- Normalization
+- [Feature Selection](https://doi.org/10.1101/574574)
     - Variance based selection of genes
     - Principle component analysis ([PCA](https://doi.org/10.1038/nmeth.4346))
-4. Dimensional Reduction
+- Dimensional Reduction
     - t-distributed Stochastic Neighbor Embedding ([tSNE](https://lvdmaaten.github.io/tsne/))
     - Fast interpolation-based t-SNE ([FI-tSNE](https://doi.org/10.1038/s41592-018-0308-4))
     - Uniform Manifold Approximation and Projection ([UMAP](https://umap-learn.readthedocs.io/en/latest/))
     - Diffusion Maps ([DM](https://doi.org/10.1093/bioinformatics/btv325))
     - [SPRING](https://doi.org/10.1093/bioinformatics/btx792)
-5. Clustering
+- Clustering
     - [Louvain](https://perso.uclouvain.be/vincent.blondel/research/louvain.html) method for community detection in large networks
     - Smart local moving algorithm for large-scale modularity-based community detection ([SLM](http://www.ludowaltman.nl/slm/))
     - Hierarchical Density-Based Spatial Clustering of Applications with Noise ([HDBSCAN](https://hdbscan.readthedocs.io/en/latest/index.html)).
-6. Differential Gene Expression
+- Differential Gene Expression
 based on annotated clusters
     - [Wilcoxon rank sum test](https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test)
     - [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
