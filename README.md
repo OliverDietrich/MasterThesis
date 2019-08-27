@@ -68,7 +68,7 @@ The steps for the analysis include:
     - [Louvain](https://perso.uclouvain.be/vincent.blondel/research/louvain.html) method for community detection in large networks
     - Smart local moving algorithm for large-scale modularity-based community detection ([SLM](http://www.ludowaltman.nl/slm/))
     - Hierarchical Density-Based Spatial Clustering of Applications with Noise ([HDBSCAN](https://hdbscan.readthedocs.io/en/latest/index.html)).
-- Differential Gene Expression
+- Differential Gene Expression (DE)
 based on annotated clusters
     - [Wilcoxon rank sum test](https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test)
     - [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
@@ -116,7 +116,7 @@ Visualization of multi-dimensional data requires the reduction from multiple (e.
 
 ### 7. [Labelling](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqLabel.R)
 
-### 8. Differential Expression Analysis [(DE)](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqGSEA.R)
+### 8. [Differential Expression](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqGSEA.R)
 
 ### 9. [Gene Ontology](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqGO.R)
 
