@@ -111,14 +111,19 @@ The second step is a mathematical procedure called principal component analysis 
 Visualization of multi-dimensional data requires the reduction from multiple (e.g. 20 principle components) to two dimensions. There are multiple algorithms that can perform this task among the most popular are t-distributed stochastic neighbor embedding ([tSNE](https://lvdmaaten.github.io/tsne/)) and uniform manifold approximation and projection ([UMAP](https://github.com/lmcinnes/umap)).
 
 ### 5. [Unsupervised Clustering](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqUC.R)
+The smart local moving algorithm for large-scale modularity-based community detection ([SLM](https://link.springer.com/article/10.1140%2Fepjb%2Fe2013-40829-0)) is employed to find density-based clusters in the data. UMAP/tSNE plots colored by cluster are printed as output. 
 
 ### 6. [Expression Plots](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqExpressionPlots.R)
+Depending on the settings (HVG, all, markergenes file) a number of UMAP/tSNE plots colored by gene expression are printed.
 
 ### 7. [Labelling](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqLabel.R)
+Labels for the clusters in a defined resolution are added to the cell metadata.
 
-### 8. [Differential Expression](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqGSEA.R)
+### 8. [Differential Expression](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqDE.R)
+The Wilcoxon rank sum test is employed to find differentially expressed genes across the labelled clusters.
 
 ### 9. [Gene Ontology](https://github.com/OliverDietrich/MasterThesis/blob/master/R/dropseqGO.R)
+From the list of differentially expressed genes (only upregulated genes) the enriched gene ontology categories are calculated and visualized as a dotplot.
 
 ### The filesystem (directory tree)
 Since all scripts are executable from the command line ([bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) terminal) they rely on a fixed architecture of one branch of the filesystem. 
